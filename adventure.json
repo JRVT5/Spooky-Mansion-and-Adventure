@@ -1,0 +1,168 @@
+{
+  "__metadata__": {
+    "title": "Adventure",
+    "start": "classroom"
+  },
+  "classroom": {
+    "name": "classroom",
+    "description": "You're in a lecture hall, for some reason.",
+    "exits": [
+      {
+        "destination": "hallway",
+        "description": "A door leads into the hall."
+      },
+      {
+        "destination": "teachers_lounge",
+        "description": "An open door in the classroom leads to the lounge."
+      }
+    ],
+    "items": []
+  },
+  "hallway": {
+    "name": "hallway",
+    "description": "This is a hallway with many locked doors.",
+    "exits": [
+      {
+        "destination": "classroom",
+        "description": "Go back into the classroom."
+      },
+      {
+        "destination": "staircase",
+        "description": "A door with the words STAIRS is stuck open."
+      },
+      {
+        "destination": "office",
+        "description": "Go into the Principal's office."
+      }
+    ],
+    "items": []
+  },
+  "janitors_closet": {
+    "name": "janitors_closet",
+    "description": "A strange, musty smelling closet. The door locks behind you but there is a key pad.",
+    "exits": [
+      {
+        "destination": "teachers_lounge",
+        "description": "Return to the teacher's lounge. That was a close one."
+      }
+    ],
+    "items": []
+  },
+  "staircase": {
+    "name": "staircase",
+    "description": "The staircase leads downward.",
+    "exits": [
+      {
+        "destination": "hallway",
+        "description": "Nevermind; go back to the hallway."
+      },
+      {
+        "destination": "outside",
+        "description": "A door at the bottom of the stairs has a red, glowing, EXIT sign. But do you have the transcript?",
+        "required_key": "Transcript"
+      }
+    ],
+    "items": []
+  },
+  "staircase2": {
+    "name": "staircase2",
+    "description": "A long dark staircase decends down.",
+    "exits": [
+      {
+        "destination": "office",
+        "description": "Climb back up the big stone steps."
+      },
+      {
+        "destination": "bomb_shelter",
+        "description": "There's a strange looking room below."
+      }
+    ],
+    "items": []
+  },
+  "bomb_shelter": {
+    "name": "bomb_shelter",
+    "description": "The old, musty bomb shelter from WWII. It seems like there might be something here.",
+    "exits": [
+      {
+        "destination": "staircase2",
+        "description": "Go back up the staircase."
+      },
+      {
+        "destination": "key_holder",
+        "description": "Open key box.",
+        "hidden": true
+      }
+    ],
+    "items": []
+  },
+  "key_holder": {
+    "name": "key_holder",
+    "description": "A old, locked key box is on the wall.",
+    "exits": [
+      {
+        "destination": "bomb_shelter",
+        "description": "Return to the bomb shelter with the key."
+      }
+    ],
+    "items": [
+      "Office Box Key"
+    ]
+  },
+  "teachers_lounge": {
+    "name": "teachers_lounge",
+    "description": "This lounge is filled with books and smells like old coffee.",
+    "exits": [
+      {
+        "destination": "classroom",
+        "description": "Return back to the classroom."
+      },
+      {
+        "destination": "janitors_closet",
+        "description": "There is a janitors closet with the door slightly open."
+      }
+    ],
+    "items": [
+      "Broom"
+    ]
+  },
+  "locked_box": {
+    "name": "locked_box",
+    "description": "Your grades are inside. Exit now!",
+    "exits": [
+      {
+        "destination": "office",
+        "description": "Return to the office."
+      }
+    ],
+    "items": [
+      "Transcript"
+    ]
+  },
+  "office": {
+    "name": "office",
+    "description": "The office is dark and cold. There is a locked box. Find the key to open it.",
+    "exits": [
+      {
+        "destination": "hallway",
+        "description": "Go back into the hallway."
+      },
+      {
+        "destination": "locked_box",
+        "description": "Open the locked box.",
+        "required_key": "Office Box Key"
+      },
+      {
+        "destination": "staircase2",
+        "description": "Descend down the eery stairs."
+      }
+    ],
+    "items": []
+  },
+  "outside": {
+    "name": "outside",
+    "description": "You've escaped! It's cold out.",
+    "exits": [],
+    "items": [],
+    "ends_game": true
+  }
+}
